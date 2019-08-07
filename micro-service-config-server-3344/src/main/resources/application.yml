@@ -1,0 +1,22 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: micro-service-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Lusior/micro-service-config.git
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: "http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka,
+                    http://eureka7003.com:7003/eureka, http://eureka7004.com:7004/eureka"
+
+logging:
+  level:
+    web: debug

@@ -1,0 +1,43 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: micro-service-zuul-gateway
+
+# zuul 需要注册进注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka,
+                    http://eureka7003.com:7003/eureka, http://eureka7004.com:7004/eureka"
+  instance:
+    instance-id: micro-service-zuul-gateway-9527
+    prefer-ip-address: true
+
+# 若不进行如下配置，则必须使用 http://myzuul.com:9527/micro-service-provider-dept/dept/get/2 来访问
+# 若配置，则可以使用 http://myzuul.com:9527/mydept/dept/get/2 来访问，以上的地址仍然有效，可以在配置
+# 中加上 ignored-services: micro-service-provider-dept 来屏蔽原路经。若有很多个真实服务名称需要屏蔽，
+# 则使用 ignored-services: "*" 来屏蔽。
+zuul:
+  # 为新路径加上前缀，原路径将会不可访问，有效路径: http://myzuul.com:9527/prefix/mydept/dept/get/2
+  prefix: /prefix
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: micro-service-provider-dept
+    mydept.path: /mydept/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: MyMicroServiceTest
+    domain: https://www.baidu.com
+
+logging:
+  level:
+    web: debug

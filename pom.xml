@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.winner</groupId>
+    <artifactId>micro-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>micro-service</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>micro-service-api</module>
+        <module>micro-service-consumer-dept-81</module>
+        <module>micro-service-consumer-dept-feign-80</module>
+        <module>micro-service-config-server-3344</module>
+        <module>micro-service-config-client-3355</module>
+        <module>micro-service-config-client-eureka-7004</module>
+        <module>micro-service-config-client-dept-8005</module>
+        <module>micro-service-eureka-7001</module>
+        <module>micro-service-eureka-7002</module>
+        <module>micro-service-eureka-7003</module>
+        <module>micro-service-provider-dept-8001</module>
+        <module>micro-service-provider-dept-8002</module>
+        <module>micro-service-provider-dept-8003</module>
+        <module>micro-service-hystrix-dept-8004</module>
+        <module>micro-service-hystrix-dashboard-9001</module>
+        <module>micro-service-zuul-gateway-9527</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
