@@ -1,7 +1,7 @@
 package com.winner.microservice.controller;
 
 import com.winner.microservice.entities.Dept;
-import com.winner.microservice.service.DeptClientService;
+import com.winner.microservice.service.ConsumerDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,23 +14,23 @@ import java.util.List;
  * @author yongs
  */
 @RestController
-public class DeptControllerConsumer {
+public class ConsumerDeptController {
 
     @Autowired
-    private DeptClientService deptClientService;
+    private ConsumerDeptService consumerDeptService;
 
     @PostMapping("/feign/dept/add")
     public Boolean add(Dept dept) {
-        return deptClientService.add(dept);
+        return consumerDeptService.add(dept);
     }
 
     @GetMapping("/feign/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id) {
-        return deptClientService.get(id);
+        return consumerDeptService.get(id);
     }
 
     @GetMapping("/feign/dept/list")
     public List list() {
-        return deptClientService.list();
+        return consumerDeptService.list();
     }
 }
