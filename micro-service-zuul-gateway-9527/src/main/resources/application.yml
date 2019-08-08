@@ -24,8 +24,10 @@ zuul:
   prefix: /prefix
   ignored-services: "*"
   routes:
-    mydept.serviceId: micro-service-provider-dept
-    mydept.path: /mydept/**
+    my-feign.path: /my-feign/**
+    my-feign.serviceId: micro-service-consumer-dept-feign
+    my-ribbonn.path: /my-ribbon/**
+    my-ribbonn.serviceId: micro-service-consumer-dept-ribbon
 
 management:
   endpoints:
