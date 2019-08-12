@@ -15,7 +15,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Dept implements Serializable {
+    private static final long serialVersionUID = -4530074361558422392L;
+
     private Long deptno;
     private String dname;
     private String db_source;
+
 }
