@@ -14,3 +14,12 @@ eureka:
   instance:
     instance-id: micro-service-consumer-hystrix-dashboard
     prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -42,6 +42,9 @@ info:
 
 # 暴露所有的 actuator 访问路径
 management:
+  endpoint:
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:

@@ -30,6 +30,9 @@ zuul:
     my-ribbonn.serviceId: micro-service-consumer-dept-ribbon
 
 management:
+  endpoint:
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
