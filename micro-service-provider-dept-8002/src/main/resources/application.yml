@@ -15,7 +15,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloudDB02?serverTimezone=UTC
     username: root
-    password: 123456
+    password: 12345678
     dbcp2:
       min-idle: 5
       initial-size: 5
