@@ -13,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cloudDB04?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/clouddb04?serverTimezone=UTC
     username: root
     password: 12345678
     dbcp2:
